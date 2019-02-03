@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Search</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <form method = "POST">
+            {% csrf_token %}
+            <div class = "form-group">
+                <label for = "squery">Projects</label><br>
+                <input type="text" id = "squery" class = "form-control-md" name = "squery"><br><br>
+                <input type="submit" class = "btn btn-dark" >
+            </div>
+        </form>
+        <div class = "results"> 
+            {% if val and results %}
+            <ul>
+                {% for i in results %}
+                <li>{{ i }}</li>
+                {% endfor %}
+            </ul>
+            {% elif val and not results %}
+            <p>No Results</p>
+            {% endif %}
+        </div>
+    </body>
+</html>

@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'accounts/student.css' %}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid align">
+            <div class="navbar-header">
+                <a href="index.html"><center><img class="img2 img-circle" src="{% static 'accounts/images/logo1.jpg' %}"></center></a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">About</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Explore</a></li>
+                <li><a href="#">Marketplace</a></li>
+                <li><a href="#">Pricing</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!--POP Up code-->
+    <div id="form-popup" class="popup" href="#">
+        <div class="popup-content">
+            <div class = "container" style="width:100%" >
+                <div class = 'contain'> 
+                    <form class="form" method = "POST" action="#" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {% load bootstrap4 %}
+                        <div class = "form-group" style="margin:auto;width:100%">
+                            {% bootstrap_form form %}
+                            <input type = "submit" class = "btn btn-dark" onclick="Hide(); Show();">
+                            <a href="#" class="close" onclick="Show()">x</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Cards-->
+    <div class="container">
+        <div class="row" id="1">
+            <h1>Your Projects:</h1>
+            {% for project in request.user.project.all %}
+            <div class="col-lg-4">
+                <a href="#" style="text-decoration:none;">
+                    <div class="card">
+                        <img src="{{ project.image1.url }}" alt="Avatar" width="100%">
+                        <div class="cont">
+                        <h4><b>{{project}}</b></h4> 
+                        <p>{{project.contributors}}</p> 
+                        </div>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+            <hr>
+    <center><a href="#form-popup"><button type="button" class="btn btn-dark" onclick="Hide()">Create Project</button></a></center>
+    <script>
+        document.getElementById('checkbox').onclick = function(){
+            this.value = "False";
+            if(this.checked){
+                this.value = "True";
+                console.log(this.value);
+            }else{
+                this.value = "False";
+                console.log(this.value);
+            }
+        }
+        function Hide(){
+            document.getElementById("1").style.display = "none";
+        }
+        function Show(){
+            document.getElementById("1").style.display = "block";
+        }
+    </script>
+</body>
+</html>

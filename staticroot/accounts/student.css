@@ -1,0 +1,82 @@
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 90%;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .cont {
+    padding: 2px 16px;
+  }
+
+  .img2{
+	height: 35px;
+	width: 35px;
+	margin: 8px;
+}
+.popup{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.8);
+  display: none;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  margin-bottom: 50px;
+=======
+>>>>>>> 21cdfc82c66ff52a590b619ea091cb773e2e332e
+=======
+>>>>>>> 21cdfc82c66ff52a590b619ea091cb773e2e332e
+}
+#form-popup .popup-content{
+  width: 500px;
+  height: 600px;
+  background: #000;
+  margin:auto;
+  position: relative;
+  border: 5px solid #fff;
+  margin-top: 175px;
+<<<<<<< HEAD
+<<<<<<< HEAD
+  overflow: scroll;
+=======
+>>>>>>> 21cdfc82c66ff52a590b619ea091cb773e2e332e
+=======
+>>>>>>> 21cdfc82c66ff52a590b619ea091cb773e2e332e
+  background-image: url("images/fbg3.jpeg");
+}
+.close{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 50%;
+  background: #222;
+  border: 3px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  line-height: 0;
+  padding: 9px 0 11px;
+  width: 20px;
+  text-align: center;
+}
+.popup:target{
+  display: block;
+}
+
+.form{
+  width: 70%;
+  margin: auto;
+}
+
+.form-group{
+  width:60%;
+  color: whitesmoke;
+}
+.btn{
+  color: black;
+}

@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'accounts/signup.css' %}" type = "text/css" >
+    <title>Login</title>
+</head>                 
+<body>
+  <div class="container">
+    <div class="row">
+          <div class="col-lg-2"></div>
+          <div class="col-lg-8">
+            <div class="row mid">
+              <div class="col-lg-6 f_half">       
+              </div>
+              <div class="col-lg-6 s_half"><h1 style="text-align: center">Log In</h1>
+                <p></p>
+                  <form method="POST">
+                    {% csrf_token %}
+                    <div class="fieldWrapper">
+                      <label for="{{ form.username.id_for_label }}">Username</label>
+                      <input id="id_username" type="text" name="username" maxlength="50" class="form-control" required>
+                      <br><br>
+                    </div>
+                    <div class="fieldWrapper">
+                      <label for="{{ form.password.id_for_label }}">Password</label>
+                      <input id="id_password" type="password" name="password" maxlength="50" class="form-control" required>
+                      <br><br>
+                    </div>
+                    <button type="submit" id="subtn" class="btn btn-primary">Submit</button>
+                  </form> 
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2"></div>
+    </div>
+  </div>
+</body>
+</html>
